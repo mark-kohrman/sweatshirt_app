@@ -18,4 +18,16 @@ class Api::SweatshirtsController < ApplicationController
     )
     render 'show.json.jb'
   end
+
+  def update
+    @sweatshirt = Sweatshirt.find_by(id: params[:id])
+    @sweatshirt.update(
+      fabric: params[:fabric] || @sweatshirt.fabric,
+      color: params[:color] || @sweatshirt.color,
+      price: params[:price] || @sweatshirt.price
+    )
+    render 'show.json.jb'
+  end
+
+
 end
