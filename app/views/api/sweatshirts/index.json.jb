@@ -1,0 +1,8 @@
+@sweatshirts.map do |sweatshirt|
+  {
+    id: sweatshirt.id,
+    fabric: sweatshirt.fabric,
+    color: sweatshirt.color,
+    price: sweatshirt.price
+  }
+end
