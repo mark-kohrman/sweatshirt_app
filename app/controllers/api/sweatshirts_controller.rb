@@ -29,5 +29,12 @@ class Api::SweatshirtsController < ApplicationController
     render 'show.json.jb'
   end
 
+  def destroy
+    @sweatshirt = Sweatshirt.find_by(id: params[:id])
+    @sweatshirt.destroy
+
+    render json: {message: "Your sweatshirt has been destroyed."}
+  end
+
 
 end
